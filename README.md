@@ -22,23 +22,23 @@ pytest -q                               # 53 tests
 ## How it fits together
 
 ```mermaid
-flowchart LR
-  subgraph market["Demo market, local and seeded"]
-    B["Brightcart<br/>JSON-LD pages"]
-    V["Voltaro<br/>JS shell + JSON API"]
-    H["Hearth #amp; Hollow<br/>messy HTML"]
+flowchart TB
+  subgraph collect["1. Collect, every day"]
+    direction LR
+    S1["Brightcart<br/>JSON-LD pages"] --> C["Crawler<br/>robots.txt, ETags, retries"]
+    S2["Voltaro<br/>JS shell + JSON API"] --> C
+    S3["Hearth #amp; Hollow<br/>messy HTML"] --> C
+    C --> P["Pydantic validation"] --> D[("SQLite")]
   end
-  B --> C
-  V --> C
-  H --> C
-  C["Crawler<br/>robots.txt, ETags, retries"] --> P["Pydantic validation"] --> D[("SQLite")]
-  D --> X["Matcher<br/>GTIN, part number, title model"]
-  X --> S["Signals<br/>index, undercuts, MAP, errors"]
-  S --> R["Repricing<br/>guardrails + approval"]
-  X --> A["FastAPI"]
-  S --> A
-  R --> A
-  A --> UI["Dashboard<br/>vanilla JS, SVG charts"]
+  subgraph understand["2. Understand"]
+    direction LR
+    X["Matcher<br/>GTIN, part number, title model"] --> S["Signals<br/>index, undercuts, MAP, errors"] --> R["Repricing<br/>guardrails + approval"]
+  end
+  subgraph show["3. Show"]
+    direction LR
+    A["FastAPI"] --> UI["Dashboard<br/>vanilla JS, SVG charts"]
+  end
+  collect --> understand --> show
 ```
 
 Each store is a different scraping problem on purpose. Brightcart puts JSON-LD on its product pages,
