@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northvane"
+version = "1.0.0"
+description = "Competitive price intelligence: polite crawling, product matching, pricing signals and guard-railed repricing."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Danial Maqbool" }]
+keywords = ["web-scraping", "price-monitoring", "entity-resolution", "fastapi", "ecommerce"]
+dependencies = [
+    "fastapi>=0.110", "uvicorn>=0.29", "httpx>=0.27", "beautifulsoup4>=4.12", "lxml>=5.0",
+    "pydantic>=2.0", "rapidfuzz>=3.0", "scikit-learn>=1.3", "scipy>=1.11", "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools]
+packages = ["northvane"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]

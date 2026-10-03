@@ -1,0 +1,158 @@
+{
+ "crawl": {
+  "days": 30,
+  "seconds": 36.5,
+  "requests": 6189,
+  "not_modified": 4384,
+  "retries": 124,
+  "errors": 0,
+  "robots_blocked": 4500,
+  "observations": 14100,
+  "quarantined": 0,
+  "listings": 470,
+  "bytes": 3566797,
+  "by_store": {
+   "Brightcart": {
+    "requests": 5310,
+    "not_modified": 4384,
+    "retries": 0,
+    "listings": 165
+   },
+   "Voltaro": {
+    "requests": 545,
+    "not_modified": 0,
+    "retries": 118,
+    "listings": 157
+   },
+   "Hearth & Hollow": {
+    "requests": 334,
+    "not_modified": 0,
+    "retries": 6,
+    "listings": 148
+   }
+  },
+  "day0_requests": 606,
+  "steady_requests_per_day": 192.5
+ },
+ "matching": {
+  "seconds": 3.97,
+  "listings": 470,
+  "auto_matched": 443,
+  "review_queue": 10,
+  "review_correct": 8,
+  "unmatched": 17,
+  "not_carried_by_us": 17,
+  "by_method": {
+   "gtin": 143,
+   "model": 204,
+   "mpn": 96
+  },
+  "auto": {
+   "tp": 443,
+   "fp": 0,
+   "fn": 10,
+   "precision": 1.0,
+   "recall": 0.9779,
+   "f1": 0.9888
+  },
+  "auto_plus_review": {
+   "tp": 451,
+   "fp": 2,
+   "fn": 2,
+   "precision": 0.9956,
+   "recall": 0.9956,
+   "f1": 0.9956
+  },
+  "baseline_fuzzy": {
+   "tp": 277,
+   "fp": 55,
+   "fn": 176,
+   "precision": 0.8343,
+   "recall": 0.6115,
+   "f1": 0.7057
+  }
+ },
+ "signals_today": {
+  "date": "2026-10-03",
+  "price_index": 99.5,
+  "store_index": {
+   "Brightcart": 96.14,
+   "Voltaro": 106.68,
+   "Hearth & Hollow": 99.77
+  },
+  "undercuts": 161,
+  "map_violations": 27,
+  "stockouts": 1,
+  "pricing_errors_30d": [
+   {
+    "type": "pricing_error",
+    "day": 21,
+    "store": "Brightcart",
+    "listing_id": "BR1448",
+    "sku": "LL-0081",
+    "price": 34.2,
+    "typical": 341.99,
+    "drop_pct": 90.0
+   },
+   {
+    "type": "pricing_error",
+    "day": 27,
+    "store": "Voltaro",
+    "listing_id": "VO1742",
+    "sku": "LL-0141",
+    "price": 49.0,
+    "typical": 489.99,
+    "drop_pct": 90.0
+   }
+  ],
+  "planted_pricing_errors": [
+   {
+    "type": "pricing_error",
+    "store": "Voltaro",
+    "listing": "VO1742",
+    "day": 27
+   },
+   {
+    "type": "pricing_error",
+    "store": "Brightcart",
+    "listing": "BR1448",
+    "day": 21
+   }
+  ],
+  "promos_30d": 91,
+  "opportunities": 11,
+  "opportunity_monthly": 25647.0,
+  "response_to_cuts": {
+   "cut_day": 10,
+   "date": "2026-09-14",
+   "n_cut": 66,
+   "by_store": {
+    "Brightcart": {
+     "cut_products": 49,
+     "followed": 41,
+     "median_lag_days": 1
+    },
+    "Voltaro": {
+     "cut_products": 52,
+     "followed": 1,
+     "median_lag_days": 1
+    },
+    "Hearth & Hollow": {
+     "cut_products": 43,
+     "followed": 6,
+     "median_lag_days": 0.0
+    }
+   }
+  }
+ },
+ "repricing_default": {
+  "strategy": "beat_lowest",
+  "changes": 191,
+  "ups": 23,
+  "downs": 168,
+  "guard_hits": 47,
+  "monthly_margin_now": 2267725.98,
+  "monthly_margin_new": 2054404.68,
+  "monthly_margin_delta": -213321.3
+ }
+}

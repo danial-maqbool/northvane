@@ -1,0 +1,9 @@
+Crawl: 30 days, 6,189 requests in 36.5 s, 14,100 price observations
+  4,384 answered 304 Not Modified, 124 retried (429/503), 0 failed, 4,500 links skipped because robots.txt disallows them, 0 rows quarantined
+  day 1 full crawl 606 requests, then 192.5 a day on average
+Matching: 470 listings in 3.97 s -> 443 auto-matched ({'gtin': 143, 'model': 204, 'mpn': 96}), 10 to review, 17 unmatched
+  auto-match precision 100.0%, recall 97.8%, F1 0.989
+  baseline fuzzy title match: precision 83.4%, recall 61.2%, F1 0.706 (55 wrong matches)
+Today (2026-10-03): price index 99.5, 161 undercuts, 27 MAP violations, 1 competitor stock-outs, 2 pricing errors caught in 30 days (planted: 2)
+  Brightcart followed 41 of 49 of our price cuts, median lag 1 day
+  11 products with headroom worth $25,647/month at current volume

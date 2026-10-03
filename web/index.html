@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-cvd="default">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northvane · Price intelligence</title>
+<meta name="description" content="Northvane: competitive price intelligence. Demo data only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2307090d'/%3E%3Cpath d='M16 4l5 13h-10z' fill='%235eead4'/%3E%3Cpath d='M16 28l-5-11h10z' fill='%23a78bfa'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<div class="shell">
+  <aside class="side" aria-label="Primary">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><linearGradient id="gv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--mint)"/><stop offset="1" stop-color="var(--violet)"/></linearGradient></defs>
+        <circle cx="20" cy="20" r="17" fill="none" stroke="url(#gv)" stroke-width="1.5" opacity=".55"/>
+        <g class="needle"><path d="M20 5 L25 20 L20 18 L15 20 Z" fill="var(--mint)"/><path d="M20 35 L15 20 L20 22 L25 20 Z" fill="var(--violet)" opacity=".85"/></g>
+        <circle cx="20" cy="20" r="2.2" fill="var(--text)"/>
+      </svg>
+      <div><b>Northvane</b><span>Price intelligence</span></div>
+    </div>
+    <button class="workspace" type="button" aria-label="Workspace: Lumen and Lane">
+      <span class="ws-logo" aria-hidden="true">L&amp;L</span>
+      <span class="ws-txt"><b>Lumen &amp; Lane</b><small>Pricing · 198 products</small></span>
+    </button>
+    <nav class="nav" aria-label="Sections">
+      <a href="#/pulse" data-view="pulse"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>Market pulse</span><kbd>1</kbd></a>
+      <a href="#/products" data-view="products"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4zM4 7v10l8 4 8-4V7M12 11v10"/></svg><span>Products</span><kbd>2</kbd></a>
+      <a href="#/matching" data-view="matching"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7h8M8 17h8M5 4a3 3 0 100 6 3 3 0 000-6zM19 14a3 3 0 100 6 3 3 0 000-6zM5 10v4a3 3 0 003 3M19 14v-4a3 3 0 00-3-3"/></svg><span>Matching</span><em class="badge" id="nav-review">·</em><kbd>3</kbd></a>
+      <a href="#/repricing" data-view="repricing"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span>Repricing</span><kbd>4</kbd></a>
+      <a href="#/alerts" data-view="alerts"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 004 0"/></svg><span>Alerts</span><kbd>5</kbd></a>
+      <a href="#/crawler" data-view="crawler"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span>Crawler</span><kbd>6</kbd></a>
+    </nav>
+    <div class="side-foot">
+      <div class="health"><span class="dot live" aria-hidden="true"></span><div><b>Crawler healthy</b><small>3 stores · next run 02:00</small></div></div>
+      <button class="a11y-btn" type="button" data-open="a11y" aria-haspopup="dialog">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2"/><path d="M4 8l8 2 8-2M12 10v5l-3 6M12 15l3 6"/></svg>
+        Accessibility</button>
+      <p class="demo-note">Demo workspace · all stores, products and prices are fictional</p>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="top">
+      <div class="crumbs"><span id="crumb-sec">Market pulse</span><small id="crumb-sub">Today across 3 competitors</small></div>
+      <button class="search" type="button" data-open="palette" aria-haspopup="dialog" aria-keyshortcuts="Control+K">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <span>Search products, SKUs, actions</span><kbd>Ctrl K</kbd></button>
+      <div class="top-right">
+        <span class="chip date" id="today-chip">—</span>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/></svg></button>
+        <button class="icon-btn" type="button" data-open="shortcuts" aria-label="Keyboard shortcuts" aria-keyshortcuts="Shift+Slash"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button>
+        <span class="avatar" aria-label="Signed in as the pricing team" role="img">PT</span>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"><div id="view" class="view"></div></main>
+  </div>
+</div>
+
+<div id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-scrim" data-close></div>
+  <div class="drawer-panel" tabindex="-1"><div id="drawer-body"></div></div>
+</div>
+
+<div id="a11y" class="drawer" role="dialog" aria-modal="true" aria-labelledby="a11y-title" hidden>
+  <div class="drawer-scrim" data-close></div>
+  <div class="drawer-panel narrow" tabindex="-1"><div id="a11y-body"></div></div>
+</div>
+
+<div id="palette" class="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div class="palette-scrim" data-close></div>
+  <div class="palette-box">
+    <div class="palette-in"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="palette-q" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Search products, jump to a page, or run an action…" autocomplete="off"></div>
+    <ul id="palette-list" role="listbox" aria-label="Results"></ul>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+  </div>
+</div>
+
+<div id="shortcuts" class="palette" role="dialog" aria-modal="true" aria-labelledby="sc-title" hidden>
+  <div class="palette-scrim" data-close></div>
+  <div class="palette-box sc"><h2 id="sc-title">Keyboard shortcuts</h2><div id="sc-body"></div></div>
+</div>
+
+<div id="tip" class="tip" role="presentation" hidden></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="sr" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<script type="module" src="/assets/app.js"></script>
+</body>
+</html>
